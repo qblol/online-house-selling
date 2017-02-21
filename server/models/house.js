@@ -7,8 +7,8 @@ var houseSchema = new Schema({
   address: String,
   description: String,
   photo: String,
-  lat: Number,
-  lon: Number,
+  latitude: Number,
+  longitude: Number,
   sold: Boolean
 },{
   timestamps: true

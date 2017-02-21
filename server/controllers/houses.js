@@ -9,7 +9,7 @@ module.exports = {
     })
   },
   getHouse: function(req,res){
-    House.find({_id:req.params.id})
+    House.findOne({_id:req.params.id})
     .then(function(data){
       res.json(data)
     })
@@ -21,8 +21,8 @@ module.exports = {
       address: req.body.address,
       description: req.body.description,
       photo: req.body.photo,
-      lat: req.body.lat,
-      lon: req.body.lon,
+      latitude: req.body.latitude,
+      longitude: req.body.longitude,
       sold: false
     })
     newHouse.save()
@@ -37,8 +37,9 @@ module.exports = {
       address: req.body.address,
       description: req.body.description,
       photo: req.body.photo,
-      lat: req.body.lat,
-      lon: req.body.lon
+      latitude: req.body.latitude,
+      longitude: req.body.longitude,
+      sold: false
     },{new: true})
     .then(function(data){
       res.json(data)
